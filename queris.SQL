@@ -4,7 +4,7 @@ SELECT `Origin`, AVG(`ArrDelay`) AS 'prom_llegadas', AVG(`DepDelay`) as "prom_sa
 
 SELECT `Origin`, colYear,colMonth, AVG(`ArrDelay`) FROM `flights` GROUP BY Origin, colYear, colMonth
 
-SELECT `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`, AVG(`flights`.`ArrTime`)
+SELECT `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`, AVG(`flights`.`ArrDelay`)
 FROM `usairports`
 	LEFT JOIN `flights` ON `flights`.`flightID` = `usairports`.`IATA`
     ORDER BY `usairports`.`City`, `flights`.`colYear`, `flights`.`colMonth`
